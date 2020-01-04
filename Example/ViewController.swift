@@ -11,24 +11,62 @@ import DHCountryPicker
 
 class ViewController: UIViewController {
 
+    private let containerStackView: UIStackView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.spacing = 10
+        $0.axis = .vertical
+        return $0
+    }(UIStackView())
+    
     private let openPickerButton: UIButton = {
         $0.translatesAutoresizingMaskIntoConstraints = false
-        $0.setTitle("Open CountryPicker", for: .normal)
+        $0.setTitle("Show CountryPicker", for: .normal)
+        $0.setContentCompressionResistancePriority(.required, for: .horizontal)
         return $0
     }(UIButton(type: .system))
     
+    private let countryInfosStackView: UIStackView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.spacing = 10
+        return $0
+    }(UIStackView())
+    
+    private let selectedCountryLabel: UILabel = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.numberOfLines = 0
+        $0.textColor = .black
+        $0.setContentCompressionResistancePriority(.required, for: .horizontal)
+        return $0
+    }(UILabel())
+    
+    private let selectedCountryFlagImageView: UIImageView = {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+        $0.contentMode = .scaleAspectFit
+        $0.setContentHuggingPriority(.required, for: .horizontal)
+        return $0
+    }(UIImageView())
+    
     private let countryProvider = DHCountryProvider()
     
-    var selectedCountry: Country?
+    var selectedCountry: Country? {
+        didSet {
+            updateCountryInfos(with: selectedCountry)
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
-        view.addSubview(openPickerButton)
+        countryInfosStackView.addArrangedSubview(selectedCountryFlagImageView)
+        countryInfosStackView.addArrangedSubview(selectedCountryLabel)
+        containerStackView.addArrangedSubview(countryInfosStackView)
+        containerStackView.addArrangedSubview(openPickerButton)
         
-        NSLayoutConstraint.activate([openPickerButton.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
-                                     openPickerButton.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor)])
+        view.addSubview(containerStackView)
+        
+        NSLayoutConstraint.activate([containerStackView.centerXAnchor.constraint(equalTo: view.layoutMarginsGuide.centerXAnchor),
+                                     containerStackView.centerYAnchor.constraint(equalTo: view.layoutMarginsGuide.centerYAnchor)])
         
         openPickerButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
         
@@ -36,9 +74,15 @@ class ViewController: UIViewController {
     }
 
     @objc private func showPicker() {
-        let countryPickerViewController = CountryPickerViewController(selectedCountry: selectedCountry, countries: countryProvider.availableCountries)
+        let countryPickerViewController = CountryPickerViewController(selectedCountry: selectedCountry, provider: countryProvider)
         countryPickerViewController.delegate = self
+        countryPickerViewController.isDialCodeHidden = false
         present(UINavigationController(rootViewController: countryPickerViewController), animated: true, completion: nil)
+    }
+    
+    private func updateCountryInfos(with country: Country?) {
+        selectedCountryFlagImageView.image = country?.flag
+        selectedCountryLabel.text = country?.localizedName
     }
 }
 

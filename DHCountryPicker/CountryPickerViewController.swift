@@ -23,7 +23,7 @@ public class CountryPickerViewController: UIViewController {
     
     private var selectedCountry: Country?
     
-    private let countries: [Country]
+    private let countryProvider: CountryProvider
     
     private var sections: [Section] = [] {
         didSet {
@@ -33,9 +33,11 @@ public class CountryPickerViewController: UIViewController {
     
     public var autoDismissOnSelect: Bool = true
     
+    public var isDialCodeHidden: Bool = true
+    
     public weak var delegate: CountryPickerDelegate?
     
-    lazy var tableView: UITableView = {
+    private lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.tableFooterView = UIView()
         $0.register(CountryCell.self, forCellReuseIdentifier: cellIdentifier)
@@ -44,17 +46,17 @@ public class CountryPickerViewController: UIViewController {
         return $0
     }(UITableView())
     
-    let searchController = UISearchController(searchResultsController: nil)
+    private let searchController = UISearchController(searchResultsController: nil)
     
-    public init(selectedCountry: Country?, countries: [Country]) {
+    public init(selectedCountry: Country?, provider: CountryProvider) {
         self.selectedCountry = selectedCountry
-        self.countries = countries
+        self.countryProvider = provider
         super.init(nibName: nil, bundle: nil)
         
         tableView.dataSource = self
         tableView.delegate = self
         searchController.searchResultsUpdater = self
-        sections = generateSections(for: countries)
+        sections = generateSections(for: countryProvider.availableCountries)
     }
     
     required init?(coder: NSCoder) {
@@ -136,7 +138,7 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
             return UITableViewCell()
         }
         
-        cell.configure(with: country)
+        cell.configure(with: country, isDialCodeHidden: isDialCodeHidden)
         cell.accessoryType = selectedCountry == country ? .checkmark : .none
         return cell
     }
@@ -167,12 +169,12 @@ extension CountryPickerViewController: UISearchResultsUpdating {
         }
         
         if !userInput.isEmpty {
-            let filteredCountries = countries
+            let filteredCountries = countryProvider.availableCountries
                 .filter { $0.localizedName.lowercased().starts(with: userInput.trimmingCharacters(in: .whitespaces).lowercased()) }
             
             sections = generateSections(for: filteredCountries)
         } else {
-            sections = generateSections(for: countries)
+            sections = generateSections(for: countryProvider.availableCountries)
         }
     }
 }

@@ -38,10 +38,22 @@ class CountryView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with country: Country) {
+    func configure(with country: Country, isDialCodeHidden: Bool) {
         flagImageView.isHidden = country.flag == nil
         flagImageView.image = country.flag
-        countryNameLabel.text = country.localizedName
+        
+        let attributedCountryText = NSMutableAttributedString()
+        attributedCountryText.append(NSAttributedString(string: country.localizedName))
+        
+        if !isDialCodeHidden {
+            let dialCodeFontSize = countryNameLabel.font.pointSize - 5
+            let dialCodeAttributedString = NSAttributedString(string: " (\(country.dialCode))", attributes: [
+                .font : UIFont.systemFont(ofSize: dialCodeFontSize, weight: .light),
+                .baselineOffset : (countryNameLabel.font.pointSize - dialCodeFontSize) / 2.0 ])
+            attributedCountryText.append(dialCodeAttributedString)
+        }
+        
+        countryNameLabel.attributedText = attributedCountryText
     }
     
     private func setupView() {

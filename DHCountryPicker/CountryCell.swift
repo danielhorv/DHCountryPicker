@@ -37,7 +37,7 @@ class CountryCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with country: Country) {
-        countryView.configure(with: country)
+    func configure(with country: Country, isDialCodeHidden: Bool) {
+        countryView.configure(with: country, isDialCodeHidden: isDialCodeHidden)
     }
 }
