@@ -17,7 +17,7 @@
 		9E70598023BA76A50041280E /* DHCountryPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9E70599A23BA7F5E0041280E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC46F00237B7A4100E4C1F3 /* DHCountryPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC46EFE237B7A4100E4C1F3 /* DHCountryPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9EC46F07237B7BAA00E4C1F3 /* CountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F06237B7BAA00E4C1F3 /* CountryPickerViewController.swift */; };
+		9EC46F07237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F06237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift */; };
 		9EC46F09237B7BC700E4C1F3 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F08237B7BC700E4C1F3 /* CountryCell.swift */; };
 		9EC46F0B237B7BD200E4C1F3 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F0A237B7BD200E4C1F3 /* CountryView.swift */; };
 		9EC46F0E237B7E5600E4C1F3 /* countryCodes.json in Resources */ = {isa = PBXBuildFile; fileRef = 9EC46F0D237B7E5600E4C1F3 /* countryCodes.json */; };
@@ -71,7 +71,7 @@
 		9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DHCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EC46EFE237B7A4100E4C1F3 /* DHCountryPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DHCountryPicker.h; sourceTree = "<group>"; };
 		9EC46EFF237B7A4100E4C1F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9EC46F06237B7BAA00E4C1F3 /* CountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryPickerViewController.swift; sourceTree = "<group>"; };
+		9EC46F06237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DHCountryPickerViewController.swift; sourceTree = "<group>"; };
 		9EC46F08237B7BC700E4C1F3 /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		9EC46F0A237B7BD200E4C1F3 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
 		9EC46F0D237B7E5600E4C1F3 /* countryCodes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countryCodes.json; sourceTree = "<group>"; };
@@ -158,7 +158,7 @@
 			children = (
 				9EC46F12237B7F2100E4C1F3 /* SupportingFiles */,
 				9EC46F0F237B7E6300E4C1F3 /* Model */,
-				9EC46F06237B7BAA00E4C1F3 /* CountryPickerViewController.swift */,
+				9EC46F06237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift */,
 				9EC46F08237B7BC700E4C1F3 /* CountryCell.swift */,
 				9EC46F0A237B7BD200E4C1F3 /* CountryView.swift */,
 				9EC46F13237B7F6800E4C1F3 /* CountryProvider.swift */,
@@ -394,7 +394,7 @@
 				9EC46F14237B7F6800E4C1F3 /* CountryProvider.swift in Sources */,
 				9EC46F0B237B7BD200E4C1F3 /* CountryView.swift in Sources */,
 				9EC46F09237B7BC700E4C1F3 /* CountryCell.swift in Sources */,
-				9EC46F07237B7BAA00E4C1F3 /* CountryPickerViewController.swift in Sources */,
+				9EC46F07237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

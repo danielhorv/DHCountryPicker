@@ -8,11 +8,11 @@
 
 import UIKit
 
-public protocol CountryPickerDelegate: class {
-    func countryPickerViewController(_ countryPickerViewController: CountryPickerViewController, selectedCountry country: Country)
+public protocol DHCountryPickerDelegate: class {
+    func countryPickerViewController(_ countryPickerViewController: DHCountryPickerViewController, selectedCountry country: Country)
 }
 
-public class CountryPickerViewController: UIViewController {
+public class DHCountryPickerViewController: UIViewController {
     
     private struct Section {
         let letter: String
@@ -35,7 +35,7 @@ public class CountryPickerViewController: UIViewController {
     
     public var isDialCodeHidden: Bool = true
     
-    public weak var delegate: CountryPickerDelegate?
+    public weak var delegate: DHCountryPickerDelegate?
     
     private lazy var tableView: UITableView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
@@ -48,7 +48,7 @@ public class CountryPickerViewController: UIViewController {
     
     private let searchController = UISearchController(searchResultsController: nil)
     
-    public init(selectedCountry: Country?, provider: CountryProvider) {
+    public init(selectedCountry: Country? = nil, provider: CountryProvider = DHCountryProvider()) {
         self.selectedCountry = selectedCountry
         self.countryProvider = provider
         super.init(nibName: nil, bundle: nil)
@@ -122,7 +122,7 @@ public class CountryPickerViewController: UIViewController {
      }
 }
 
-extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegate {
+extension DHCountryPickerViewController: UITableViewDataSource, UITableViewDelegate {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
@@ -162,7 +162,7 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
     }
 }
 
-extension CountryPickerViewController: UISearchResultsUpdating {
+extension DHCountryPickerViewController: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         guard let userInput = searchController.searchBar.text else {
             return

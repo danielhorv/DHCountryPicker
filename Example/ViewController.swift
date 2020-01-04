@@ -74,7 +74,7 @@ class ViewController: UIViewController {
     }
 
     @objc private func showPicker() {
-        let countryPickerViewController = CountryPickerViewController(selectedCountry: selectedCountry, provider: countryProvider)
+        let countryPickerViewController = DHCountryPickerViewController(selectedCountry: selectedCountry)
         countryPickerViewController.delegate = self
         countryPickerViewController.isDialCodeHidden = false
         present(UINavigationController(rootViewController: countryPickerViewController), animated: true, completion: nil)
@@ -86,8 +86,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController: CountryPickerDelegate {
-    func countryPickerViewController(_ countryPickerViewController: CountryPickerViewController, selectedCountry country: Country) {
+extension ViewController: DHCountryPickerDelegate {
+    func countryPickerViewController(_ countryPickerViewController: DHCountryPickerViewController, selectedCountry country: Country) {
         self.selectedCountry = country
     }
 }
