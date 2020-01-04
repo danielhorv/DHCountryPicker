@@ -51,7 +51,10 @@ public class CountryPickerViewController: UIViewController {
         self.countries = countries
         super.init(nibName: nil, bundle: nil)
         
-        self.sections = generateSections(for: countries)
+        tableView.dataSource = self
+        tableView.delegate = self
+        searchController.searchResultsUpdater = self
+        sections = generateSections(for: countries)
     }
     
     required init?(coder: NSCoder) {
@@ -62,25 +65,24 @@ public class CountryPickerViewController: UIViewController {
         super.viewDidLoad()
         setupView()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        searchController.searchResultsUpdater = self
-        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func setupView() {
         if #available(iOS 13.0, *) {
+            view.backgroundColor = .systemBackground
             tableView.sectionIndexColor = .label
             navigationController?.navigationBar.backgroundColor = .secondarySystemGroupedBackground
+        } else {
+            view.backgroundColor = .white
+            navigationController?.navigationBar.backgroundColor = .white
         }
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.obscuresBackgroundDuringPresentation = false
         
         navigationItem.hidesSearchBarWhenScrolling = false
         navigationItem.searchController = searchController
-        
-        searchController.obscuresBackgroundDuringPresentation = false
-        
         definesPresentationContext = true
         
         view.addSubview(tableView)
@@ -114,7 +116,7 @@ public class CountryPickerViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(_ notification: Notification) {
-        tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        tableView.contentInset = .zero
      }
 }
 
@@ -130,8 +132,11 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let country = sections[indexPath.section].countries[indexPath.row]
         
-        let cell: CountryCell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as! CountryCell
-        cell.countryView.configure(with: country)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? CountryCell else {
+            return UITableViewCell()
+        }
+        
+        cell.configure(with: country)
         cell.accessoryType = selectedCountry == country ? .checkmark : .none
         return cell
     }
@@ -157,11 +162,13 @@ extension CountryPickerViewController: UITableViewDataSource, UITableViewDelegat
 
 extension CountryPickerViewController: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
-        let userInput = searchController.searchBar.text ?? ""
+        guard let userInput = searchController.searchBar.text else {
+            return
+        }
         
         if !userInput.isEmpty {
             let filteredCountries = countries
-                .filter { $0.localizedName.lowercased().starts(with: userInput.lowercased()) }
+                .filter { $0.localizedName.lowercased().starts(with: userInput.trimmingCharacters(in: .whitespaces).lowercased()) }
             
             sections = generateSections(for: filteredCountries)
         } else {

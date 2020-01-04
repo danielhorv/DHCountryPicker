@@ -10,8 +10,8 @@ import Foundation
 
 public protocol CountryProvider {
     var availableCountries: [Country] { get }
-    func current() -> Country?
-}
+    var current: Country? { get }
+ }
 
 private class ResourceHelper { }
 
@@ -49,7 +49,7 @@ public class DHCountryProvider: CountryProvider {
         }
     }
     
-    public func current() -> Country? {
+    public var current: Country? {
         return availableCountries.first(where: { $0.regionCode.lowercased() == Locale.current.regionCode?.lowercased() })
     }
 }

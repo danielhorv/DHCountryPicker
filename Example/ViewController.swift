@@ -19,11 +19,7 @@ class ViewController: UIViewController {
     
     private let countryProvider = DHCountryProvider()
     
-    var selectedCountry: Country? {
-        didSet {
-            print("selectedCountry: \(selectedCountry?.localizedName)")
-        }
-    }
+    var selectedCountry: Country?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +32,7 @@ class ViewController: UIViewController {
         
         openPickerButton.addTarget(self, action: #selector(showPicker), for: .touchUpInside)
         
-        selectedCountry = countryProvider.current()
+        selectedCountry = countryProvider.current
     }
 
     @objc private func showPicker() {
@@ -50,6 +46,4 @@ extension ViewController: CountryPickerDelegate {
     func countryPickerViewController(_ countryPickerViewController: CountryPickerViewController, selectedCountry country: Country) {
         self.selectedCountry = country
     }
-    
-    
 }

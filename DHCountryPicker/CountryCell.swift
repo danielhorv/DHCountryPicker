@@ -12,7 +12,7 @@ class CountryCell: UITableViewCell {
     
     private let contentViewMargins = NSDirectionalEdgeInsets(top: 15, leading: 0, bottom: 15, trailing: 0)
     
-    let countryView: CountryView = {
+    private let countryView: CountryView = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         return $0
     }(CountryView())
@@ -35,5 +35,9 @@ class CountryCell: UITableViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configure(with country: Country) {
+        countryView.configure(with: country)
     }
 }
