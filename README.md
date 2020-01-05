@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/danielhorv/DHCountryPicker.svg?branch=master)](https://travis-ci.org/danielhorv/DHCountryPicker)
+[![codecov](https://codecov.io/gh/danielhorv/DHCountryPicker/branch/master/graph/badge.svg)](https://codecov.io/gh/danielhorv/DHCountryPicker)
 
 # DHCountryPicker
 
