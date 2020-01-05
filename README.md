@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/danielhorv/DHCountryPicker.svg?branch=master)](https://travis-ci.org/danielhorv/DHCountryPicker)
+
 # DHCountryPicker
 
 Country Picker with dial code and flag for iOS.
