@@ -1,0 +1,5 @@
+language: swift
+osx_image: xcode10.3
+xcode_project: DHCountryPicker.xcodeproj
+xcode_scheme: DHCountryPicker
+xcode_destination: platform=iOS Simulator,OS=11,name=iPhone SE
