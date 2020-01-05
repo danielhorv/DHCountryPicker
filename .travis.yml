@@ -4,10 +4,10 @@ osx_image: xcode11.3
 script:
 - xcodebuild -enableCodeCoverage=YES clean test -workspace DHCountryPicker.xcworkspace -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.4' | xcpretty
 
-deploy:
-  provider: script
-  script: ./scripts/push.sh
+deploy:  
   skip_cleanup: true
+  provider: script
+  script: sh scripts/push.sh
 
   on:
     tags: true
