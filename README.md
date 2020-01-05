@@ -37,8 +37,8 @@ let countryPickerViewController = DHCountryPickerViewController(selectedCountry:
 ````
 
 ### Available ViewController settings:
- `autoDismissOnSelect` - default `true` - automatically dismiss the picker on selection
- `isDialCodeHidden` - default `true` - show/hide the dial codes
+* `autoDismissOnSelect` - default `true` - automatically dismiss the picker on selection
+* `isDialCodeHidden` - default `true` - show/hide the dial codes
     
 ```swift
 let countryPickerViewController = DHCountryPickerViewController()
