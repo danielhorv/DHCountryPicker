@@ -10,8 +10,8 @@ import Foundation
 import FlagKit
 
 public struct Country: Codable, Equatable {
-    let regionCode: String
-    let dialCode: String
+    public let regionCode: String
+    public let dialCode: String
     
     private enum CodingKeys: String, CodingKey {
         case regionCode = "code"

@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
   spec.platform     = :ios, "11.0"
   spec.swift_version = '5.0'
   spec.source       = { :git => "https://github.com/danielhorv/DHCountryPicker.git", :tag => "#{spec.version}" }
-  spec.source_files  = "DHCountryPicker/**/*.swift"
+  spec.source_files  = "DHCountryPicker/**/*.{h,m,swift,json}"
   spec.dependency 'FlagKit'
 
 end
