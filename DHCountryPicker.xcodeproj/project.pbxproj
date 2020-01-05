@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3C4D26EAEAADE06AF2C1FA4B /* Pods_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2D91D7FCBCFC3E176953ECF /* Pods_Example.framework */; };
 		4736C2A169E5F3A5CF1D20F5 /* Pods_DHCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 54965B1F1462AD40F4A998BE /* Pods_DHCountryPicker.framework */; };
+		5F85B9D9EBF7C98ACEDD6D08 /* Pods_ExampleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2185E28C73AF6C9538DA8368 /* Pods_ExampleTests.framework */; };
 		9E62C32123C20B3600E17A80 /* ExampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62C32023C20B3600E17A80 /* ExampleTests.swift */; };
 		9E62C32F23C21E4600E17A80 /* ExampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E62C32E23C21E4600E17A80 /* ExampleUITests.swift */; };
 		9E70596E23BA76350041280E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E70596D23BA76350041280E /* AppDelegate.swift */; };
@@ -17,7 +18,7 @@
 		9E70597A23BA76360041280E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E70597823BA76360041280E /* LaunchScreen.storyboard */; };
 		9E70597F23BA76A50041280E /* DHCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */; };
 		9E70598023BA76A50041280E /* DHCountryPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9E70599A23BA7F5E0041280E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E70599A23BA7F5E0041280E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC46F00237B7A4100E4C1F3 /* DHCountryPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC46EFE237B7A4100E4C1F3 /* DHCountryPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EC46F07237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F06237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift */; };
 		9EC46F09237B7BC700E4C1F3 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F08237B7BC700E4C1F3 /* CountryCell.swift */; };
@@ -59,7 +60,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9E70598023BA76A50041280E /* DHCountryPicker.framework in Embed Frameworks */,
-				9E70599A23BA7F5E0041280E /* (null) in Embed Frameworks */,
+				9E70599A23BA7F5E0041280E /* BuildFile in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -68,9 +69,11 @@
 
 /* Begin PBXFileReference section */
 		20B086A04DC50985771B9CBB /* Pods-Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.release.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.release.xcconfig"; sourceTree = "<group>"; };
+		2185E28C73AF6C9538DA8368 /* Pods_ExampleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExampleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A3A517369133A21CA12C63 /* Pods-Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Example.debug.xcconfig"; path = "Target Support Files/Pods-Example/Pods-Example.debug.xcconfig"; sourceTree = "<group>"; };
 		3DCCEE566E0D6AA80665D12F /* Pods-DHCountryPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHCountryPicker.release.xcconfig"; path = "Target Support Files/Pods-DHCountryPicker/Pods-DHCountryPicker.release.xcconfig"; sourceTree = "<group>"; };
 		54965B1F1462AD40F4A998BE /* Pods_DHCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DHCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		73B9181BC43B15FFDA25C05F /* Pods-ExampleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.release.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.release.xcconfig"; sourceTree = "<group>"; };
 		9E62C31E23C20B3600E17A80 /* ExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E62C32023C20B3600E17A80 /* ExampleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleTests.swift; sourceTree = "<group>"; };
 		9E62C32223C20B3600E17A80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +104,7 @@
 		9EC46F13237B7F6800E4C1F3 /* CountryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryProvider.swift; sourceTree = "<group>"; };
 		D64C7994899134EFDF9D019F /* Pods-DHCountryPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DHCountryPicker.debug.xcconfig"; path = "Target Support Files/Pods-DHCountryPicker/Pods-DHCountryPicker.debug.xcconfig"; sourceTree = "<group>"; };
 		F2D91D7FCBCFC3E176953ECF /* Pods_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD4B4D6654F9A9C5A7753667 /* Pods-ExampleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExampleTests.debug.xcconfig"; path = "Target Support Files/Pods-ExampleTests/Pods-ExampleTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +112,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F85B9D9EBF7C98ACEDD6D08 /* Pods_ExampleTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,6 +150,8 @@
 				3DCCEE566E0D6AA80665D12F /* Pods-DHCountryPicker.release.xcconfig */,
 				29A3A517369133A21CA12C63 /* Pods-Example.debug.xcconfig */,
 				20B086A04DC50985771B9CBB /* Pods-Example.release.xcconfig */,
+				FD4B4D6654F9A9C5A7753667 /* Pods-ExampleTests.debug.xcconfig */,
+				73B9181BC43B15FFDA25C05F /* Pods-ExampleTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -254,6 +261,7 @@
 				9E70598423BA76B30041280E /* libFlagKit.a */,
 				54965B1F1462AD40F4A998BE /* Pods_DHCountryPicker.framework */,
 				F2D91D7FCBCFC3E176953ECF /* Pods_Example.framework */,
+				2185E28C73AF6C9538DA8368 /* Pods_ExampleTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -276,6 +284,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9E62C32523C20B3600E17A80 /* Build configuration list for PBXNativeTarget "ExampleTests" */;
 			buildPhases = (
+				A279A43D430CD80492435ACF /* [CP] Check Pods Manifest.lock */,
 				9E62C31A23C20B3600E17A80 /* Sources */,
 				9E62C31B23C20B3600E17A80 /* Frameworks */,
 				9E62C31C23C20B3600E17A80 /* Resources */,
@@ -470,6 +479,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		A279A43D430CD80492435ACF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ExampleTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E11AC3BF1C39F8DB6EA1141F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -566,6 +597,7 @@
 /* Begin XCBuildConfiguration section */
 		9E62C32623C20B3600E17A80 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = FD4B4D6654F9A9C5A7753667 /* Pods-ExampleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +618,7 @@
 		};
 		9E62C32723C20B3600E17A80 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 73B9181BC43B15FFDA25C05F /* Pods-ExampleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -818,6 +851,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dhorvath.DHCountryPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -845,6 +879,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dhorvath.DHCountryPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
