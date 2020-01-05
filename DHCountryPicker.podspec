@@ -12,6 +12,9 @@ Pod::Spec.new do |spec|
   spec.social_media_url   = "https://twitter.com/picipuma"
   spec.platform     = :ios
   spec.platform     = :ios, "11.0"
+  spec.swift_version = '5.0'
   spec.source       = { :git => "https://github.com/danielhorv/DHCountryPicker.git", :tag => "#{spec.version}" }
-  spec.source_files  = "DHCountryPicker/DHCountryPicker/**/*.swift"
+  spec.source_files  = "DHCountryPicker/**/*.swift"
+  spec.dependency 'FlagKit'
+
 end
