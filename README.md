@@ -48,6 +48,14 @@ let countryPickerViewController = DHCountryPickerViewController()
 countryPickerViewController.autoDismissOnSelect = false
 countryPickerViewController.isDialCodeHidden = false
 ````
+
+## Installation
+
+**CocoaPods:**
+
+```
+pod "DHCountryPicker"
+```
     
 ## Requirements
 - Swift 5
