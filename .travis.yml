@@ -1,5 +1,6 @@
 language: swift
-osx_image: xcode10.3
-xcode_project: DHCountryPicker.xcodeproj
-xcode_scheme: DHCountryPickerTests
-xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone 7
+osx_image: xcode11.3
+
+script:
+- xctool clean build -workspace DHCountryPicker.xcworkspace -scheme Example -sdk iphonesimulator | xcpretty
+- xcodebuild test -workspace DHCountryPicker.xcworkspace -scheme Example -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 7,OS=12.4' | xcpretty

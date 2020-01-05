@@ -5,6 +5,22 @@
    <BuildAction
       parallelizeBuildables = "YES"
       buildImplicitDependencies = "YES">
+      <BuildActionEntries>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "YES"
+            buildForArchiving = "YES"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "9E70596A23BA76350041280E"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
+               ReferencedContainer = "container:DHCountryPicker.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
+      </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
@@ -16,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EE9770123C20607001CA714"
-               BuildableName = "DHCountryPickerTests.xctest"
-               BlueprintName = "DHCountryPickerTests"
+               BlueprintIdentifier = "9E62C31D23C20B3600E17A80"
+               BuildableName = "ExampleTests.xctest"
+               BlueprintName = "ExampleTests"
                ReferencedContainer = "container:DHCountryPicker.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -51,7 +67,8 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E70596A23BA76350041280E"
@@ -59,7 +76,7 @@
             BlueprintName = "Example"
             ReferencedContainer = "container:DHCountryPicker.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
