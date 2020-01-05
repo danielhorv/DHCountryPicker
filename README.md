@@ -5,6 +5,9 @@ Country Picker with dial code and flag for iOS.
 * Localization ✅
 * DarkMode support ⚫️⚪️
 
+## Screenshots
+<img src="picker.gif" height="500"/>
+
 ## Usage 
 
 ### Initialization:
