@@ -1,5 +1,5 @@
 language: swift
 osx_image: xcode10.3
 xcode_project: DHCountryPicker.xcodeproj
-xcode_scheme: Example
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
+xcode_scheme: DHCountryPickerTests
+xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone 7
