@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |spec|
   spec.name         = "DHCountryPicker"
-  spec.version      = "0.1.2"
+  spec.version      = "0.1.3"
   spec.summary      = "Country Picker library for iOS"
   spec.description  = <<-DESC
                     Country picker with phone numbers for iOS
