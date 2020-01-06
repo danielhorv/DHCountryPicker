@@ -71,6 +71,12 @@ public class DHCountryPickerViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
+    public override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
+        searchController.isActive = false
+        searchController.searchBar.resignFirstResponder()
+        super.dismiss(animated: flag, completion: completion)
+    }
+    
     private func setupView() {
         if #available(iOS 13.0, *) {
             view.backgroundColor = .systemBackground
@@ -103,10 +109,12 @@ public class DHCountryPickerViewController: UIViewController {
         return keys.map { Section(letter: $0, countries: groupedDictionary[$0]!) }
     }
     
-    @objc func dismiss(animated: Bool) {
-        searchController.isActive = false
-        searchController.searchBar.resignFirstResponder()
-        dismiss(animated: animated, completion: nil)
+    @objc public func dismissAnimated() {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc public func dismissNonAnimated() {
+        dismiss(animated: false, completion: nil)
     }
     
     @objc private func keyboardWillShow(_ notification: Notification) {

@@ -77,6 +77,10 @@ class ViewController: UIViewController {
         let countryPickerViewController = DHCountryPickerViewController(selectedCountry: selectedCountry)
         countryPickerViewController.delegate = self
         countryPickerViewController.isDialCodeHidden = false
+        
+        let closeButton = UIBarButtonItem(title: "Close", style: .plain, target: countryPickerViewController, action: #selector(countryPickerViewController.dismissAnimated))
+        countryPickerViewController.navigationItem.rightBarButtonItem = closeButton
+        
         present(UINavigationController(rootViewController: countryPickerViewController), animated: true, completion: nil)
     }
     

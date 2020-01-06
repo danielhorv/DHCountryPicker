@@ -26,6 +26,12 @@ class ExampleUITests: XCTestCase {
             .children(matching: .other)
             .element
             .swipeUp()
+        
+        app.children(matching: .window)
+            .element(boundBy: 0)
+            .children(matching: .other)
+            .element
+            .tap()
     }
 
     func testLaunchPerformance() {
