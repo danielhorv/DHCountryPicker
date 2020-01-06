@@ -18,7 +18,7 @@
 		9E70597A23BA76360041280E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9E70597823BA76360041280E /* LaunchScreen.storyboard */; };
 		9E70597F23BA76A50041280E /* DHCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */; };
 		9E70598023BA76A50041280E /* DHCountryPicker.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9EC46EFB237B7A4100E4C1F3 /* DHCountryPicker.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		9E70599A23BA7F5E0041280E /* BuildFile in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		9E70599A23BA7F5E0041280E /* (null) in Embed Frameworks */ = {isa = PBXBuildFile; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EC46F00237B7A4100E4C1F3 /* DHCountryPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC46EFE237B7A4100E4C1F3 /* DHCountryPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9EC46F07237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F06237B7BAA00E4C1F3 /* DHCountryPickerViewController.swift */; };
 		9EC46F09237B7BC700E4C1F3 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EC46F08237B7BC700E4C1F3 /* CountryCell.swift */; };
@@ -60,7 +60,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				9E70598023BA76A50041280E /* DHCountryPicker.framework in Embed Frameworks */,
-				9E70599A23BA7F5E0041280E /* BuildFile in Embed Frameworks */,
+				9E70599A23BA7F5E0041280E /* (null) in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +815,7 @@
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
@@ -826,7 +827,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -883,6 +884,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.dhorvath.DHCountryPicker;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
